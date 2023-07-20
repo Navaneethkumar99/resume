@@ -1,0 +1,463 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.container, .about, .certificate, .contact {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+nav{
+    width: 100%;
+    background-color: rgb(10, 10, 10);
+    border: 3px solid;
+    position: relative;
+    height: 40px;
+    padding-top: 20px;
+    position: fixed;
+    z-index: 3;
+}
+nav ul{
+    position: absolute;
+    right: 20px;
+}
+nav h2{
+    top: 10px;
+    position: absolute;
+    left: 10px;
+    color: aliceblue;
+}
+nav h2 span{
+    font-size: 30px;
+    color: #ff004f;
+}
+nav ul li {
+    display: inline-block;
+    margin: 0 20px 0 30px;
+    position: relative;
+
+}
+
+nav ul li a{
+    text-decoration:  none;
+    font-size: 20px;
+    color: aliceblue;
+}
+nav ul li a:hover::after{
+    color: #ff004f;
+    width: 100%;
+}
+
+nav ul li a::after{
+    content: "";
+    width: 0;
+    height: 4px;
+    background-color: #ff004f;
+    position: absolute;
+    transition-duration: 0.4s;
+    left: 0;
+    bottom: -5px;
+}
+.main{
+    position: absolute;
+    top: 240px;
+    left: 180px;
+}
+.main h2{
+    font-size: 40px;
+}
+.main p{
+    font-size: 30px;
+}
+.main .name{
+    color: #ff004f;
+    font-size: 60px;
+}
+
+.image{
+    position: absolute;
+    right: 190px;
+    top: 140px;
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+   
+}
+
+.glowing{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    animation: glow 1s infinite linear;
+
+}
+
+@keyframes glow {
+    0%{
+        box-shadow: 0 0 30px 15px rgb(161, 13, 206);
+        opacity: 0;
+    }
+    25%{
+        box-shadow: 0 0 30px 15px rgb(161, 13, 206);
+        opacity: 0.5;
+    }
+    50%{
+        box-shadow: 0 0 30px 15px rgb(161, 13, 206);
+        opacity: 1;
+    }
+    75%{
+        box-shadow: 0 0 30px 15px rgb(161, 13, 206);
+        opacity: 0.5;
+    }
+    100%{
+        box-shadow: 0 0 30px 15px rgb(161, 13, 206);
+        opacity: 0;
+    }
+}
+.photo_bg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(40, 37, 37);
+    overflow: hidden;
+    border-radius: 10px;
+}
+.photo_bg::before{
+    position: absolute;
+    width: 60%;
+    height: 130%;
+    background-color: #ff004f;
+    content: "";
+    animation: rotate 4s infinite linear;    
+}
+.photo_bg::after{
+    position: absolute;
+    content: "";
+    inset: 5px;
+    border-radius: 10px;
+    background-color:rgb(40, 37, 37);
+}
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+.photo_bg img{
+    position: absolute;
+    z-index: 2;
+}
+.image2 img{
+    position: absolute;
+    left: 50px;
+    top: 90px;
+    width: 400px;
+    height: 500px;
+    border: 4px solid rgb(24, 22, 22);
+    box-shadow: 0 0 18px 3px;
+}
+.details{
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 90px;
+    align-items: center;
+    justify-content: center;
+}
+.details h1 {
+    font-size: 40px;
+    position: absolute;
+    right: 20em;
+}
+.details p{
+    position: absolute;
+    flex-wrap: wrap;
+    width: 500px;
+    right: 22em;
+    top: 5em;
+    font-weight: 500;
+    font-size: 18px;
+}
+.details-c form{
+    position: absolute;
+    top: 10rem;
+    display: inline-flex;
+    right: 35rem;
+    justify-content: space-between;
+    width: 300px;
+}
+.details-c form input{
+    display: none;
+}
+.titles, .titles2  {
+   position:absolute;
+   right: 29em;
+   top: 170px;
+   font-size: 25px;
+   cursor: pointer;
+}
+.titles::after{
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: #ff004f;
+    position: absolute;
+    top: 29px;
+    left: 0;
+    transition: 0.3s;
+}
+.titles:hover::after{
+    width: 100%;
+}
+.titles2{
+    right: 22em;
+}
+.titles2::after{
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: #ff004f;
+    position: absolute;
+    top: 29px;
+    transition: 0.3s;
+    left: 0;
+}
+.titles2:hover::after{
+    width: 100%;
+}
+.edu{
+    position: absolute;
+    top: 60px;
+    left: -20px;
+    width: 800px;
+    opacity: 0;
+    transition-duration: 0.2s;
+    
+}
+.edu table{
+   border: none;
+   padding: 10px;
+}
+
+#education:checked ~ .edu{
+opacity: 1;
+}
+
+.skill_list ul li{
+    list-style: none;
+    font-size: 20px;
+    font-weight: 500;
+    display: block;
+    padding: 10px;
+}
+
+.skill_list ul{
+    position: absolute;
+    display: block;
+    top: 50px;
+    left: 220px;
+    width: 200px;
+    opacity: 0;
+    transition-duration: 0.3s;
+
+}
+#skills:checked ~ .skill_list ul{
+opacity: 1;
+}
+.certificate{
+    position: relative;
+}
+.main2{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.main2 h1{
+    position: absolute;
+    top: 90px;
+    font-size: 50px;
+    color: #ff004f;
+    text-shadow: 2px 2px 2px #000000;
+}
+.container2{
+    top: 180px;
+    left: 20px;
+    position: relative;
+     width: 350px;
+     height: 400px;
+     text-align: center;
+     margin: 20px;
+ }
+ 
+.inner-container{
+    position: absolute;
+    width: 100%;
+    transition: all 0.8s ease-in;
+    transform-style: preserve-3d;
+    border-radius: 25px;
+}
+.container2:hover .inner-container ,.back img{
+    transform:translateY(-20px) rotateY(180deg) ;
+    width: 180%;
+ 
+    left: -100px;
+    z-index: 3;
+}
+.front{
+    
+    background: rgb(116,34,195);
+     background: linear-gradient(0deg, rgba(116,34,195,1) 0%, rgba(253,45,209,1) 100%);
+     border-radius: 25px;
+     box-shadow: 0 0 20px 10px;
+}
+.front h3{
+    position: absolute;
+    top: 100px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    color: aliceblue;
+    font-weight: 700;
+}
+.inner-container img{
+    width: 100%;
+    height: 100%;
+}
+.inner-container>.front, .inner-container>.back{
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 400px;
+    backface-visibility: hidden;
+}
+.back{
+    transform: rotateY(180deg);
+    border-radius: 25px;
+}
+.front button{
+    position: absolute;
+    width: 130px;
+    height: 45px;
+    bottom: 60px;
+    left: 100px;
+    border-radius: 20px;
+    background-color: rgb(250, 151, 58);
+    font-size: 20px;
+    font-weight: 500;
+    box-shadow:  0 0 8px 1px ;
+}
+.container3{
+    position: relative;
+    display: flex;
+}
+.details2{
+    position: absolute;
+    top: 150px;
+    left: 10em;
+}
+.details2 h1{
+    font-size: 50px;
+    color: #ff004f;
+    font-weight: 900;
+    width: 300px;
+    text-shadow: 3px 0 2px black;
+}
+.details2 section{
+    position: relative;
+    display: flex;
+    width: 350px;
+    line-height: 50px;
+    padding: 50px 15px;
+    flex-flow: column;
+    justify-content: center;
+    font-size: 20px;
+
+}
+.details2 section a{
+    text-decoration: none;
+    color: #0f7865;
+    transition: 0.5s;
+}
+.details2 section a:hover{
+   scale: 1.1;
+   color: #ff004f;
+ }
+
+.contact-form{
+position: absolute;
+top: 150px;
+left: 50em;
+}
+.details2 button {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #0f7865;
+    color: aliceblue;
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.contact-form input{
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    border: none;
+    outline-style: solid;
+    box-shadow: inset 0 0 9px 1px #073217;
+    box-shadow: 0 0 9px 5px;
+    font-size: 20px;
+    padding: 0px 20px;
+}
+.contact-form input::placeholder{
+ font-size: 20px;
+ position: absolute;
+ top: 10px;
+ left: 20px;
+}
+  
+.contact-form textarea{
+    width: 400px;
+    height: 210px;
+    border-radius: 10px;
+    border: none;
+    outline-style: solid;
+    box-shadow: inset 0 0 9px 1px #073217;
+    font-size: 20px;
+    padding: 10px 20px ;
+}
+.contact-form textarea::placeholder{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 20px;
+}
+.contact-form button{
+    width: 400px;
+    height: 50px;
+    margin-top: 25px;
+    margin-left: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #0f7865;
+    color: aliceblue;
+    font-size: 20px;
+    transition: 0.3s;
+}
+button:hover{
+    background-color: #ff004f;
+}
